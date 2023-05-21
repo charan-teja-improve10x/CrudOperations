@@ -15,11 +15,11 @@ public class TodoListItemsAdapter extends RecyclerView.Adapter<TodoListViewHolde
     TodoList[] items;
     OnTodoListListener listener;
 
-    public TodoListItemsAdapter(TodoList[] todoLists){
+    public TodoListItemsAdapter(TodoList[] todoLists) {
         items = todoLists;
     }
 
-    void createTodoListObject(TodoList[] items){
+    void createTodoListObject(TodoList[] items) {
         this.items = items;
         notifyDataSetChanged();
     }
@@ -32,7 +32,7 @@ public class TodoListItemsAdapter extends RecyclerView.Adapter<TodoListViewHolde
     @Override
     public TodoListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        TodoListItemBinding binding = TodoListItemBinding.inflate(inflater,parent,false);
+        TodoListItemBinding binding = TodoListItemBinding.inflate(inflater, parent, false);
         TodoListViewHolder viewHolder = new TodoListViewHolder(binding);
         return viewHolder;
     }

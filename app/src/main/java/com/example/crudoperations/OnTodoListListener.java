@@ -2,7 +2,7 @@ package com.example.crudoperations;
 
 public interface OnTodoListListener {
 
-     void onDelete(String id);
+    void onDelete(String id);
 
-     void onEdit(TodoList item);
+    void onEdit(TodoList item);
 }

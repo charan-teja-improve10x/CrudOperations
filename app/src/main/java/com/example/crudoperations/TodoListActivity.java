@@ -13,7 +13,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TodoListActivity extends AppCompatActivity implements OnTodoListListener{
+public class TodoListActivity extends AppCompatActivity implements OnTodoListListener {
 
     ActivityTodoListBinding binding;
     TodoList[] todoLists = new TodoList[0];
@@ -47,18 +47,19 @@ public class TodoListActivity extends AppCompatActivity implements OnTodoListLis
     }
 
     private void handleFabButton() {
-      binding.fabIb.setOnClickListener(v -> {
-          Intent intent = new Intent(this,AddActivity.class);
-          startActivity(intent);
-      });
+        binding.fabIb.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddActivity.class);
+            startActivity(intent);
+        });
     }
-    private void getTodoItem(){
+
+    private void getTodoItem() {
         ApiInterface apiInterface = new TodoListApi().createApiInterface();
         Call<TodoList[]> call = apiInterface.getTodoListItems();
         call.enqueue(new Callback<TodoList[]>() {
             @Override
             public void onResponse(Call<TodoList[]> call, Response<TodoList[]> response) {
-                Toast.makeText(TodoListActivity.this, "Size =  " + response.body() , Toast.LENGTH_SHORT).show();
+                Toast.makeText(TodoListActivity.this, "Size =  " + response.body(), Toast.LENGTH_SHORT).show();
                 todoListItemsAdapter.createTodoListObject(response.body());
             }
 
@@ -80,7 +81,6 @@ public class TodoListActivity extends AppCompatActivity implements OnTodoListLis
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-
             }
         });
     }
@@ -92,8 +92,8 @@ public class TodoListActivity extends AppCompatActivity implements OnTodoListLis
 
     @Override
     public void onEdit(TodoList item) {
-        Intent intent = new Intent(this,EditActivity.class);
-        intent.putExtra("item",item);
+        Intent intent = new Intent(this, EditActivity.class);
+        intent.putExtra("item", item);
         startActivity(intent);
 
     }

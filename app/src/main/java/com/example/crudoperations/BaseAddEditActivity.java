@@ -10,6 +10,7 @@ public class BaseAddEditActivity extends AppCompatActivity {
 
     protected ActivityBaseAddEditBinding binding;
     protected ApiInterface apiInterface;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

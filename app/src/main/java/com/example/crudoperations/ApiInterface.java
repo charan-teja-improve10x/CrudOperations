@@ -20,5 +20,5 @@ public interface ApiInterface {
     Call<Void> deleteTodoListItem(@Path("id") String id);
 
     @PUT("charanTaskListItem/{id}")
-    Call<Void> editTodoListItem(@Path("id") String id,@Body TodoList item);
+    Call<Void> editTodoListItem(@Path("id") String id, @Body TodoList item);
 }

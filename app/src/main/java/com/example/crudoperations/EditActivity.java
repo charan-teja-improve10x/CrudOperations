@@ -8,7 +8,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditActivity extends BaseAddEditActivity{
+public class EditActivity extends BaseAddEditActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class EditActivity extends BaseAddEditActivity{
 
     private void handleEditBtn(String id) {
         binding.editBtn.setOnClickListener(v -> {
-            Call<Void> call =  apiInterface.editTodoListItem(id,setTodoList());
+            Call<Void> call = apiInterface.editTodoListItem(id, setTodoList());
             call.enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(Call<Void> call, Response<Void> response) {
